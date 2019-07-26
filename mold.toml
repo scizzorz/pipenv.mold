@@ -1,10 +1,9 @@
+[[includes]]
+url = "https://github.com/philipdexter/std.mold.git"
+
 [types.python]
 command = ["pipenv", "run", "python", "?"]
 extensions = ["py"]
-
-[types.shell]
-command = ["sh", "?"]
-extensions = ["sh"]
 
 [types.pipenv-shell]
 command = ["pipenv", "run", "sh", "?"]
@@ -53,7 +52,7 @@ type = "pipenv-shell"
 
 [recipes.clean]
 help = "Remove build artifacts"
-type = "shell"
+type = "sh"
 
 [recipes.package]
 help = "Create a package for publishing"
