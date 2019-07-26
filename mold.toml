@@ -1,0 +1,66 @@
+[types.python]
+command = ["pipenv", "run", "python", "?"]
+extensions = ["py"]
+
+[types.shell]
+command = ["sh", "?"]
+extensions = ["sh"]
+
+[types.pipenv-shell]
+command = ["pipenv", "run", "sh", "?"]
+extensions = ["sh"]
+
+[recipes.install]
+help = "Install project dependencies using pipenv"
+command = ["pipenv", "install"]
+
+[recipes.update]
+help = "Update project dependencies using pipenv"
+command = ["pipenv", "update"]
+
+[recipes.install-dev]
+help = "Install development dependencies using pipenv"
+command = ["pipenv", "install", "-d"]
+deps = ["install"]
+
+[recipes.reqs]
+help = "Lock dependencies using pipenv"
+type = "pipenv-shell"
+
+[recipes.lint]
+help = "Lint using flake8"
+type = "pipenv-shell"
+
+[recipes.fmt]
+help = "Autoformat using black"
+type = "pipenv-shell"
+
+[recipes.fmtcheck]
+help = "Lint using black"
+type = "pipenv-shell"
+
+[recipes.docstubs]
+help = "Generate doc stubs using sphinx-apidoc"
+type = "pipenv-shell"
+
+[recipes.docs]
+help = "Generate docs using sphinx-build"
+type = "pipenv-shell"
+
+[recipes.test]
+help = "Run tests using pytest"
+type = "pipenv-shell"
+
+[recipes.clean]
+help = "Remove build artifacts"
+type = "shell"
+
+[recipes.package]
+help = "Create a package for publishing"
+type = "pipenv-shell"
+deps = ["clean"]
+
+[recipes.publish]
+help = "Publish Python package to internal PyPI"
+type = "pipenv-shell"
+deps = ["package"]
