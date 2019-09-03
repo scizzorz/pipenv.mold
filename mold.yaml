@@ -19,6 +19,7 @@ recipes:
 
   reqs:
     help: "Lock dependencies to requirements.txt"
+    type: "sh"
     script: |
       pipenv lock --requirements > requirements.txt
       pipenv lock -d --requirements > requirements-dev.txt
